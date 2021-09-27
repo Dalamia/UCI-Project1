@@ -43,11 +43,10 @@ _Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdow
 The machines on the internal network are not exposed to the public Internet. 
 
 Only the Jumpbox machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses:
-- _TODO: 
+- It is only allowed access through my personal ip
 
 Machines within the network can only be accessed by Jumpbox
-- _TODO: Which machine did you allow to access your ELK VM? What was its IP address?_
-
+Through ssh connnection 172.31.38.145
 A summary of the access policies in place can be found in the table below.
 
 | Name     | Publicly Accessible | Allowed IP Addresses |
@@ -62,9 +61,10 @@ Ansible was used to automate configuration of the ELK machine. No configuration 
 - By automating the configuration of ansible it decreases the time it would take to do it from scratch as well as helping to limit mistakes by user error.
 
 The playbook implements the following tasks:
-- _TODO: In 3-5 bullets, explain the steps of the ELK installation play. E.g., install Docker; download image; etc._
-- ...
-- ...
+- installs docker.io
+- increases virtual memory
+- installs Pip (python 3)
+- installs docker python module (docker)
 
 The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
 
@@ -86,7 +86,7 @@ These Beats allow us to collect the following information from each machine:
 In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 
 
 SSH into the control node and follow the steps below:
-- Copy the _____ file to _____.
+- Copy the   file to _____.
 - Update the hosts file to include webserver 1 and webserver 2
 - Run the playbook, and navigate to you browser and enter the public ip/port to open kibana to check that the installation worked as expected.
 
