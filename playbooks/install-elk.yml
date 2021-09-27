@@ -1,0 +1,25 @@
+---
+  - name: install elk
+    hosts: elk
+    remote_user: ubuntu
+    become: true
+    tasks:
+    - name: docker.io
+      apt:
+        name: docker.io
+        state: present
+
+    - name: Increase virtual memory
+      command: sysctl -w vm.max_map_count=262144
+
+
+
+    - name: Install pip
+      apt:
+        name: python3-pip
+        state: present
+
+    - name: Install Docker python module
+      pip:
+        name: docker
+        state: present
