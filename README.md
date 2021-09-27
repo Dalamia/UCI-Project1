@@ -22,11 +22,11 @@ This document contains the following details:
 The main purpose of this network is to expose a load-balanced and monitored instance of DVWA, the D*mn Vulnerable Web Application.
 
 Load balancing ensures that the application will be highly Available, in addition to restricting Access to the network.
-- _TODO: What aspect of security do load balancers protect? What is the advantage of a jump box?_
+- _TODO: Load balancer help to prevent ddos attacks. What is the advantage of a jump box?It allows you to update multiple servers 
 
-Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the _____ and system _____.
-- _TODO: What does Filebeat watch for?_
-- _TODO: What does Metricbeat record?_
+Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the Data and system Logs.
+- Filebeat monitors the log files or locations that you specify, collects log events, and forwards them either to Elasticsearch or Logstash for indexing
+- Metricbeat periodically collect metrics from the operating system and from services running on the server and when it collects that metric and static data ships them to the output that you specify such as Elatsticsearch or Logstash
 
 The configuration details of each machine may be found below.
 _Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdown_tables) to add/remove values from the table_.
@@ -86,13 +86,13 @@ These Beats allow us to collect the following information from each machine:
 In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 
 
 SSH into the control node and follow the steps below:
-- Copy the   file to _____.
+- Copy the Intall-elk.yml file to Elk VM.
 - Update the hosts file to include webserver 1 and webserver 2
-- Run the playbook, and navigate to you browser and enter the public ip/port to open kibana to check that the installation worked as expected.
+- Run the playbook, and navigate to you browser and enter the public ip/port to open kibana to check that the installation worked as expected (port 5601).
 
 _TODO: Answer the following questions to fill in the blanks:_
-- _Which file is the playbook? Where do you copy it?_
-- _Which file do you update to make Ansible run the playbook on a specific machine? How do I specify which machine to install the ELK server on versus which to install Filebeat on?_
-- _Which URL do you navigate to in order to check that the ELK server is running?
+- _Which file is the playbook? Where do you copy it? You have to nano into the /etc/ansible/hosts file and specify the ip of the machines you want to allow the playbook to run on. 
+- How do I specify which machine to install the ELK server on versus which to install Filebeat on?_
+- Which URL do you navigate to in order to check that the ELK server is running? [kibana](http://20.98.114.15:5601/app/kibana)
 
 _As a **Bonus**, provide the specific commands the user will need to run to download the playbook, update the files, etc._
