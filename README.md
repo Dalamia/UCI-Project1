@@ -2,7 +2,7 @@
 
 The files in this repository were used to configure the network depicted below.
 
-![TODO: Update the path with the name of your diagram](Images/diagram_filename.png)
+![Network Diagram](https://github.com/Dalamia/UCI-Project1/blob/main/Images/Untitled%20Diagram.drawio.png)
 
 These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the playbook file may be used to install only certain pieces of it, such as Filebeat.
 
@@ -22,14 +22,13 @@ This document contains the following details:
 The main purpose of this network is to expose a load-balanced and monitored instance of DVWA, the D*mn Vulnerable Web Application.
 
 Load balancing ensures that the application will be highly Available, in addition to restricting Access to the network.
-- _TODO: Load balancer help to prevent ddos attacks. What is the advantage of a jump box?It allows you to update multiple servers 
+- Load balancer help to prevent ddos attacks and seperates web traffic between to keep high efficiency.It allows you to update and control multiple servers 
 
 Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the Data and system Logs.
 - Filebeat monitors the log files or locations that you specify, collects log events, and forwards them either to Elasticsearch or Logstash for indexing
 - Metricbeat periodically collect metrics from the operating system and from services running on the server and when it collects that metric and static data ships them to the output that you specify such as Elatsticsearch or Logstash
 
 The configuration details of each machine may be found below.
-_Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdown_tables) to add/remove values from the table_.
 
 | Name     | Function | IP Address | Operating System |
 |----------|----------|------------|------------------|
@@ -51,7 +50,7 @@ A summary of the access policies in place can be found in the table below.
 
 | Name     | Publicly Accessible | Allowed IP Addresses |
 |----------|---------------------|----------------------|
-| Jump Box | Yes/No (SSH)            | 172.31.38.105 172.31.2.151    |
+| Jump Box | Yes/No (SSH)            | My personal IP    |
 | Webserver 1 |      yes (HTTP)   |  172.31.38.145                 |
 | Webserver 2 |      yes (HTTP)   |  172.31.38.145              |
 
@@ -90,9 +89,8 @@ SSH into the control node and follow the steps below:
 - Update the hosts file to include webserver 1 and webserver 2
 - Run the playbook, and navigate to you browser and enter the public ip/port to open kibana to check that the installation worked as expected (port 5601).
 
-_TODO: Answer the following questions to fill in the blanks:_
-- _Which file is the playbook? Where do you copy it? You have to nano into the /etc/ansible/hosts file and specify the ip of the machines you want to allow the playbook to run on. 
-- How do I specify which machine to install the ELK server on versus which to install Filebeat on?_
+- _Which file is the playbook? Where do you copy it? You have to nano into the /etc/ansible directory and you have your ansible files in there such as Filebeat-playbook.yaml
+- You have to nano into the /etc/ansible/hosts file and specify the ip of the machines you want to allow the playbook to run on as well as the filebeat config files.
 - Which URL do you navigate to in order to check that the ELK server is running? input elk server public ip then :5601/app/kibana [kibana](http://20.98.114.15:5601/app/kibana)
 
 _As a **Bonus**, provide the specific commands the user will need to run to download the playbook, update the files, etc._
